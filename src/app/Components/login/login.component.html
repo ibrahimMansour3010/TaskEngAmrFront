@@ -1,0 +1,23 @@
+<!-- Please give a heart if you like it -->
+
+<body>
+    <div class="container">
+      <div class="logo">
+        <!-- <img src="https://github.com/keycloak/keycloak/blob/main/themes/src/main/resources/theme/keycloak/login/resources/img/keycloak-logo-text.png?raw=true" /> -->
+        <!-- <h4>Custom by Tran Vo</h4> -->
+      </div>
+      <form id="loginForm" class="login-form-wrapper"  [formGroup]="fromgroup" (ngSubmit)="onSubmit()">
+        <div class="login-input">
+          <label for="username">Username or email:</label>
+          <input autocomplete="off" id="username" type="text" formControlName="userNameOrEmail" />
+          <p id="usernameRequiredMessage">Username or email is required</p>
+        </div>
+        <div class="login-input">
+          <label for="password">Password:</label>
+          <input autocomplete="off" id="password" type="password" formControlName="password" />
+          <p id="passwordRequiredMessage">Password is required</p>
+        </div>
+        <input [disabled]="!fromgroup.valid" id="loginButton" class="login-button" type="submit" value="Log In" />
+      </form>
+    </div>
+  </body>

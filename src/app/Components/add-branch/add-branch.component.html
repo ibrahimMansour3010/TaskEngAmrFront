@@ -1,0 +1,44 @@
+<div class="pt-5 p-4">
+    <form action="" dir="rtl" [formGroup]="formgroup" (ngSubmit)="onSubmit()" (reset)="ResetForm()">
+        <h3 style="text-align: right; padding-right: 10px; font-size: 25px;">اضافة فرع</h3>
+        <div class="d-flex">
+            <div class="w-50">
+                <div class="form-floating m-2">
+                    <input type="text" class="form-control" formControlName="englishName" style="text-align: right;" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">الاسم بالانجليزية</label>
+                </div>
+                <div class="form-floating m-2">
+                    <input type="text" class="form-control" formControlName="arabicName" style="text-align: right;" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">الاسم</label>
+                </div>
+                <div class="form-floating m-2">
+                    <input type="text" class="form-control"  style="text-align: right;" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">العنوان بالانجليزية</label>
+                </div>
+                <div class="form-floating m-2">
+                    <input type="text" class="form-control" formControlName="address" style="text-align: right;" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">العنوان</label>
+                </div>
+                <div class="form-floating m-2">
+                    <input type="submit" class="btn btn-success" value="اضافة">
+                    <input type="reset" class="btn btn-danger m-2" value="الغاء">
+                </div>
+            </div>
+            <div class="w-50" >
+                <div class="form-floating m-2">
+                    <input type="text" class="form-control" disabled value="خطوط الطول ودوائر العرض : {{long}}, {{lat}}" style="text-align: right;" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">العنوان في الخريطة</label>
+                </div>
+                <div id="map" class="w-100 h-75">
+
+                </div>
+                
+            </div>
+        </div>
+    </form>
+</div>

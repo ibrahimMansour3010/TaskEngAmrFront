@@ -1,0 +1,40 @@
+<div class="w-75  m-auto mt-4">
+    <a [routerLink]="['/AddBranch']" class="btn btn-success mt-2 mb-4">اضافة</a>
+    <table class="table  table-bordered  text-center">
+        <thead>
+            <th></th>
+            <th>العنوان</th>
+            <th>الاسم بالانجليزية</th>
+        </thead>
+        <tbody>
+            <tr style="vertical-align: middle;" *ngFor="let branch of branches">
+                <td class="w-25">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" (click)="deleteBranchId = branch.id" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        حذف
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    هل تريد الحذف ؟
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"   
+                                        data-bs-dismiss="modal">لا</button>
+                                    <button type="button" data-bs-dismiss="modal" (click)="deleteBranch()" class="btn btn-primary">نعم</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a [routerLink]="['/EditBranch/'+branch.id]" class="btn btn-primary m-3">تعديل</a>
+                </td>
+                <td class="w-50">{{branch.address}}</td>
+                <td class="w-25">{{branch.arabicName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
